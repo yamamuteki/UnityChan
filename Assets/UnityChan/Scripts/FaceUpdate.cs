@@ -17,7 +17,7 @@ namespace UnityChan
 
 		void OnGUI ()
 		{
-			if (Application.loadedLevelName != "Locomotion") {
+			if (!Application.loadedLevelName.StartsWith("Locomotion")) {
 				int height = 30;
 				GUILayout.Box ("Face Update", GUILayout.Width (170), GUILayout.Height ((height + 5) * (animations.Length + 2) - height));
 				Rect screenRect = new Rect (10, 25, 150, (height + 5) * (animations.Length + 1));
@@ -36,7 +36,7 @@ namespace UnityChan
 
 		void Update ()
 		{
-			if (Application.loadedLevelName != "Locomotion") {
+			if (!Application.loadedLevelName.StartsWith("Locomotion")) {
 				if (Input.GetMouseButton (0)) {
 						current = 1;
 				} else if (!isKeepFace) {
